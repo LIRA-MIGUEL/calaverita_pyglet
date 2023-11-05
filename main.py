@@ -1,17 +1,17 @@
+# Importar la biblioteca Pyglet
 import pyglet
 
-# Cargar una imagen
+# Cargar una imagen llamada "logo3.jpg"
 img = pyglet.image.load("logo3.jpg")
 
 # Obtener las dimensiones de la imagen
 ventana_ancho = img.width
 ventana_alto = img.height
 
+# Crear una nueva ventana con las dimensiones de la imagen
 new_window = pyglet.window.Window(width=ventana_ancho, height=ventana_alto)
 
-# Resto de tu código...
-
-# Crea una etiqueta para el texto largo
+# Crear una etiqueta de texto largo
 texto_largo = """
 Todo ya comienza en un solo día 
 festivo del día de muertos hablamos 
@@ -33,6 +33,7 @@ está esperando, ya no hay salvación,
 después del hackathon nos vamos al panteón.
 """
 
+# Crear una etiqueta de texto largo para mostrar en la ventana
 text_label = pyglet.text.Label(
     texto_largo,
     font_name='Arial',
@@ -41,12 +42,12 @@ text_label = pyglet.text.Label(
     y=new_window.height // 2,
     anchor_x='center',  # Centra horizontalmente
     anchor_y='bottom',  # Centra verticalmente
-    multiline=True,
-    width=new_window.width - 20,
-    color=(0, 0, 0, 255)
+    multiline=True,  # Permite texto en varias líneas
+    width=new_window.width - 20,  # Ancho del área de texto
+    color=(0, 0, 0, 255)  # Color del texto (negro)
 )
 
-
+# Crear una etiqueta de texto vacía para mostrar en la ventana
 label = pyglet.text.Label(
     '',
     font_name='Arial',
@@ -55,23 +56,25 @@ label = pyglet.text.Label(
     y=new_window.height // 2,
     anchor_x='center',  # Centra horizontalmente
     anchor_y='bottom',  # Centra verticalmente
-    color=(0, 0, 0, 255)
+    color=(0, 0, 0, 255)  # Color del texto (negro)
 )
 
-
+# Cargar y reproducir un archivo de música llamado "music.mp3"
 music = pyglet.resource.media('music.mp3')
 music.play()
 
-# Evento para cerrar la ventana
+# Definir un evento para cerrar la ventana
 @new_window.event
 def on_close():
     pyglet.app.exit()
 
+# Definir un evento de dibujo en la ventana
 @new_window.event
 def on_draw():
-    new_window.clear()
-    img.blit(0, 0)  # Dibuja la imagen en la ventana
+    new_window.clear()  # Borra el contenido anterior de la ventana
+    img.blit(0, 0)  # Dibuja la imagen en la ventana en la posición (0, 0)
     text_label.draw()  # Dibuja el texto largo
-    label.draw()
+    label.draw()  # Dibuja la etiqueta de texto vacía
 
+# Iniciar la aplicación Pyglet y mantener la ventana abierta
 pyglet.app.run()
