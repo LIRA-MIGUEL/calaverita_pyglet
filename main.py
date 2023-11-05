@@ -39,23 +39,25 @@ text_label = pyglet.text.Label(
     font_size=12,
     x=new_window.width // 2,
     y=new_window.height // 2,
-    anchor_x='left',  # Centra horizontalmente
-    anchor_y='center',  # Centra verticalmente
+    anchor_x='center',  # Centra horizontalmente
+    anchor_y='bottom',  # Centra verticalmente
     multiline=True,
     width=new_window.width - 20,
-    color=(255, 0, 0, 255)
+    color=(0, 0, 0, 255)
 )
+
 
 label = pyglet.text.Label(
     '',
     font_name='Arial',
     font_size=16,
     x=new_window.width // 2,
-    y=new_window.height // 2 - text_label.content_height,
-    anchor_x='ritgh',  # Centra horizontalmente
-    anchor_y='center',  # Centra verticalmente
-    color=(0, 0, 255, 255)
+    y=new_window.height // 2,
+    anchor_x='center',  # Centra horizontalmente
+    anchor_y='bottom',  # Centra verticalmente
+    color=(0, 0, 0, 255)
 )
+
 
 music = pyglet.resource.media('music.mp3')
 music.play()
