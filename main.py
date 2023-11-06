@@ -2,7 +2,7 @@
 import pyglet
 
 # Cargar una imagen llamada "logo3.jpg"
-img = pyglet.image.load("logo3.jpg")
+img = pyglet.image.load("logo4.jpg")
 
 # Obtener las dimensiones de la imagen
 ventana_ancho = img.width
@@ -41,10 +41,10 @@ text_label = pyglet.text.Label(
     x=new_window.width // 2,
     y=new_window.height // 2,
     anchor_x='center',  # Centra horizontalmente
-    anchor_y='bottom',  # Centra verticalmente
+    anchor_y='center',  # Centra verticalmente
     multiline=True,  # Permite texto en varias líneas
     width=new_window.width - 20,  # Ancho del área de texto
-    color=(0, 0, 0, 255)  # Color del texto (negro)
+    color=(0, 0, 255, 255)  # Color del texto (negro)
 )
 
 # Crear una etiqueta de texto vacía para mostrar en la ventana
@@ -55,8 +55,8 @@ label = pyglet.text.Label(
     x=new_window.width // 2,
     y=new_window.height // 2,
     anchor_x='center',  # Centra horizontalmente
-    anchor_y='bottom',  # Centra verticalmente
-    color=(0, 0, 0, 255)  # Color del texto (negro)
+    anchor_y='center',  # Centra verticalmente
+    color=(0, 0, 255, 255)  # Color del texto (negro)
 )
 
 # Cargar y reproducir un archivo de música llamado "music.mp3"
